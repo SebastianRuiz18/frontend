@@ -1,0 +1,120 @@
+.product .price, .product .total{
+    display: block;
+}
+
+.product img{
+    width: 200px;
+    height: 600px;
+}
+
+.product {
+  display: inline-block;
+  margin: 50px;
+  padding: 10px;
+  border-radius: 5px;
+
+  align-items: center;
+  appearance: none;
+  background-clip: padding-box;
+  background-color: initial;
+  background-image: none;
+  border-style: none;
+  box-sizing: border-box;
+  color: #fff;
+  display: inline-block;
+  flex-direction: row;
+  flex-shrink: 0;
+  font-family: Eina01,sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  justify-content: center;
+  line-height: 24px;
+  margin: 50;
+  min-height: 64px;
+  outline: none;
+  overflow: visible;
+  padding: 19px 26px;
+  pointer-events: auto;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  width: auto;
+  word-break: keep-all;
+  z-index: 0;
+}
+
+@media (min-width: 768px) {
+.product {
+    padding: 19px 32px;
+  }
+}
+
+.product:before,
+.product:after {
+  border-radius: 80px;
+}
+
+.product:after {
+  background-color: initial;
+  background-image: linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);
+  bottom: 4px;
+  content: "";
+  display: block;
+  left: 4px;
+  overflow: hidden;
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  transition: all 100ms ease-out;
+  z-index: -1;
+}
+
+.product:hover:not(:disabled):after {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  transition-timing-function: ease-in;
+}
+
+
+.product .add-cart {
+  margin-top: 15px;
+  background-color: #fff000;
+  border-radius: 12px;
+  color: #000;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 5px 15px;
+  text-align: center;
+  transition: 200ms;
+  width: 50%;
+  box-sizing: border-box;
+  border: 0;
+  font-size:16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.product .add-cart:not(:disabled):hover,
+.product .add-cart:not(:disabled):focus {
+  outline: 0;
+  background: #f4e603;
+  box-shadow: 0 0 0 2px rgba(0,0,0,.2), 0 3px 8px 0 rgba(0,0,0,.15);
+}
+
+.product .add-cart:disabled {
+  filter: saturate(0.2) opacity(0.5);
+  cursor: not-allowed;
+}
+
+.product .add-cart:hover {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+}
