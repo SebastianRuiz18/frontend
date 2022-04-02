@@ -14,7 +14,7 @@ const Home = () => {
                         <Link to="/about" className='btn-home'> About us!</Link>
                     </li>
                     <li>
-                        <Link to="/about" className='btn-home'> Check your shopping cart!</Link>
+                        <Link to="/cart" className='btn-home'> Check your shopping cart!</Link>
                     </li>
                 </ul>
             </div>

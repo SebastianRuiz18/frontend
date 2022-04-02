@@ -1,7 +1,21 @@
 import './navBar.css';
 import { Link } from "react-router-dom";
+import store from '../context/storeContext';
+import { useContext } from 'react';
 
 const NavBar = () => {
+    const cart = useContext(store).cart; // Read cart from context
+
+    const getNumber = () => {
+        
+        let total = 0;
+        for(let i = 0; i < cart.length; i++){
+            let prod = cart[i];
+            total += prod.quantity;
+        }
+        return total;
+    };
+
     return(<div className="navBar">
 
                 <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -23,11 +37,13 @@ const NavBar = () => {
                         </li>
                         <li className="nav-item">
                         <Link className="nav-link" to="/cart">Cart</Link>
-                        </li>  
+                        </li>
+                        <li className="nav-item">
+                        <Link className="nav-link" to="/admin">Admin</Link>
+                        </li> 
                     </ul>
                     <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                        <button class="btn btn-outline-success" type="submit">Search</button>
+                        Cart: {getNumber()}
                     </form>
                     </div>
                 </div>
